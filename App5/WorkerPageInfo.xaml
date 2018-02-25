@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="Worker.WorkerPageInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Worker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="10 0 10 0" HorizontalAlignment="Stretch" >
+            <TextBlock x:Name="headerBlock" Text = ""
+                       Style="{ThemeResource HeaderTextBlockStyle}" TextAlignment="Center" />
+            <StackPanel Padding="0,10,0,0" Margin="60,10,66,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="286" >
+                <Image Source="Assets/2.jpg" Height="187" Margin="0,0,10,0"></Image>
+                <TextBlock FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,15,0,0">ФИО Сотрудника</TextBlock>
+                <TextBlock x:Name="nameBox" HorizontalAlignment="Center"  />
+                <TextBlock FontSize="18" FontWeight="Bold" HorizontalAlignment="Center">Количество часов</TextBlock>
+                <TextBlock x:Name="hoursBox" HorizontalAlignment="Center"  />
+                <TextBlock FontSize="18" FontWeight="Bold" HorizontalAlignment="Center">Тариф</TextBlock>
+                <TextBlock x:Name="tarifBox" HorizontalAlignment="Center"  />
+                <TextBlock FontSize="18" FontWeight="Bold" HorizontalAlignment="Center">Оклад после НДС</TextBlock>
+                <TextBlock x:Name="okladbox" HorizontalAlignment="Center"  />
+                <TextBlock FontSize="18" FontWeight="Bold" HorizontalAlignment="Center">Оклад до НДС</TextBlock>
+                <TextBlock x:Name="okladboxw" HorizontalAlignment="Center"  />
+                <TextBlock FontSize="18" FontWeight="Bold" HorizontalAlignment="Center">НДС</TextBlock>
+                <TextBlock x:Name="nds" HorizontalAlignment="Center"  />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button Content="Назад" Click="Back_Click" Margin="10" HorizontalAlignment="Center"  Background="#FF002EFF" Foreground="White" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

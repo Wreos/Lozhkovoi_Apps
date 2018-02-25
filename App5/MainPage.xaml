@@ -1,0 +1,59 @@
+﻿<Page 
+    
+    x:Class="Workers.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Workers"
+    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:StringFormatConverter x:Name="StringFormat"/>
+    </Page.Resources>
+
+    <Page.BottomAppBar>
+
+        <CommandBar HorizontalContentAlignment="Stretch">
+            <CommandBar.Content>
+                <TextBox   x:Name="textBoxFamaly"   TextChanged="textBoxFamaly_TextChanged" Margin="5,5,0,5" MinWidth="100" PlaceholderText="Поиск"  />
+            </CommandBar.Content>
+            <AppBarButton x:Name="saveButton" Label="Добавить" Icon="Add" Click="Add_Click" />
+            <AppBarButton x:Name="editButton" Label="Изменить" Icon="Edit" Click="Edit_Click" />
+            <AppBarButton x:Name="deleteButton" Label="Удалить" Icon="Delete" Click="Delete_Click" />
+            <AppBarButton x:Name="refreshButtion" Label="Обновить" Icon="OutlineStar" Click="refreshButtion_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  >
+        <TextBlock x:Name="headerBlock" Margin="10,0,0,0" Text = "Список сотрудников" 
+                       Style="{ThemeResource HeaderTextBlockStyle}"  />
+
+      
+        <Button Visibility="Collapsed" x:Name="search" Click="search_Click" >Искать</Button>
+     
+        <ListView x:Name="workersList" Margin="0,74,0,0" HorizontalContentAlignment="Stretch"  >
+            <ListView.ItemTemplate>
+                <DataTemplate  x:DataType="local:Worker">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Image Source="Assets/1.jpg" MaxHeight="50" MaxWidth="50" />
+                        <TextBlock FontSize="16" FontWeight="Bold"   Tapped="TextBlock_Tapped">
+   <Run Text="{Binding Path=name}"/>
+   <Run Text="{Binding Path=family}"/>
+
+                        </TextBlock>
+                        <TextBlock Text="{Binding Path=salaryw, Converter={StaticResource ResourceKey=StringFormat}, ConverterParameter=' Оклад: {0} '}" FontSize="16" />
+
+
+
+                    </StackPanel>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel>
+
+
+
+        </StackPanel>
+    </Grid>
+</Page>

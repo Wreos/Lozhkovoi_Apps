@@ -1,0 +1,2 @@
+MainPackage=B:\Документы\Проекты\аувы\App5\bin\x64\Release\Workers_4.0.2.0_x64.appx
+SymbolPackage=B:\Документы\Проекты\аувы\App5\AppPackages\Workers_4.0.2.0_Test\Workers_4.0.2.0_x64.appxsym

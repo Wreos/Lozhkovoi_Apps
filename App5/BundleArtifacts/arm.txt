@@ -1,0 +1,6 @@
+MainPackage=B:\Документы\Проекты\аувы\App5\bin\ARM\Release\Workers_4.0.2.0_ARM.appx
+SymbolPackage=B:\Документы\Проекты\аувы\App5\AppPackages\Workers_4.0.2.0_Test\Workers_4.0.2.0_ARM.appxsym
+ResourcePack=B:\Документы\Проекты\аувы\App5\bin\ARM\Release\Workers_4.0.2.0_scale-100.appx
+ResourcePack=B:\Документы\Проекты\аувы\App5\bin\ARM\Release\Workers_4.0.2.0_scale-125.appx
+ResourcePack=B:\Документы\Проекты\аувы\App5\bin\ARM\Release\Workers_4.0.2.0_scale-150.appx
+ResourcePack=B:\Документы\Проекты\аувы\App5\bin\ARM\Release\Workers_4.0.2.0_scale-400.appx

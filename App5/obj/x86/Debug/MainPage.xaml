@@ -1,0 +1,60 @@
+﻿<Page 
+    
+    x:Class="Workers.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Workers"
+    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:StringFormatConverter x:ConnectionId='1' x:Name="StringFormat"/>
+    </Page.Resources>
+
+    <Page.BottomAppBar>
+
+        <CommandBar HorizontalContentAlignment="Stretch">
+            <CommandBar.Content>
+                <TextBox x:ConnectionId='2'   x:Name="textBoxFamaly"                                           Margin="5,5,0,5" MinWidth="100" PlaceholderText="Поиск"  />
+            </CommandBar.Content>
+            <AppBarButton x:ConnectionId='3' x:Name="saveButton" Label="Добавить" Icon="Add"                   />
+            <AppBarButton x:ConnectionId='4' x:Name="editButton" Label="Изменить" Icon="Edit"                    />
+            <AppBarButton x:ConnectionId='5' x:Name="deleteButton" Label="Удалить" Icon="Delete"                      />
+            <AppBarButton x:ConnectionId='6' x:Name="refreshButtion" Label="Обновить" Icon="OutlineStar"                             />
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  >
+        <TextBlock x:ConnectionId='7' x:Name="headerBlock" Margin="10,0,0,0" Text = "Список сотрудников" 
+                       Style="{ThemeResource HeaderTextBlockStyle}"  />
+
+      
+        <Button x:ConnectionId='8' Visibility="Collapsed" x:Name="search"                      >Искать</Button>
+     
+        <ListView x:ConnectionId='9' x:Name="workersList" Margin="0,74,0,0" HorizontalContentAlignment="Stretch"  >
+            <ListView.ItemTemplate>
+                <DataTemplate                           >
+                    <StackPanel  Orientation="Horizontal" >
+                        <Image Source="Assets/1.jpg" MaxHeight="50" MaxWidth="50" />
+                        <TextBlock x:ConnectionId='10' FontSize="16" FontWeight="Bold"                            >
+   <Run Text="{Binding Path=name}"/>
+   <Run Text="{Binding Path=family}"/>
+
+                        </TextBlock>
+                        <TextBlock Text="{Binding Path=salaryw, Converter={StaticResource ResourceKey=StringFormat}, ConverterParameter=' Оклад: {0} '}" FontSize="16" />
+
+
+
+                    </StackPanel>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel>
+
+
+
+        </StackPanel>
+    </Grid>
+</Page>
+
